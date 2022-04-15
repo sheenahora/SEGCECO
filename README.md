@@ -11,7 +11,7 @@ Before applying machine learning techniques, the primary step is to preprocess t
 
 **Pipeline of the proposed framework**
 
-[Pipeline](https://github.com/sheenahora/SEGCECO/blob/master/Overview.png)
+<img src="Pipeline.png">
 
 **Pre-processing step**
 
