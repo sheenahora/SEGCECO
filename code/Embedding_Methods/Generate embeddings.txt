@@ -1,0 +1,53 @@
+
+*************************************************
+		Node2Vec
+*************************************************
+Open anaconda prompt
+conda activate env3.5.5 #activate env3.5.5 
+cd D:\Masters\My_thesis\Code\Embedding_Methods\node2vec
+python src/main.py --input D:/Masters/My_thesis/Code/edgelist_encoded_D1.edgelist --output D:/Masters/My_thesis/Code/Embedding_Results/Node2vec_16_D1.emd --dimensions 16
+
+*************************************************
+		DEEPWALK
+*************************************************
+Open anaconda prompt
+conda activate env3.5.5
+check Requirements file, all requirements are up to date
+cd D:\Masters\My_thesis\Code\Embedding_Methods\deepwalk-master
+python setup.py install
+deepwalk --format edgelist --input D:/Masters/My_thesis/Code/edgelist_encoded_D1.edgelist --output D:/Masters/My_thesis/Code/Embedding_Results/DeepWalk_16_D1.emd --representation-size 16
+
+workers - 1
+window-size - 5
+number-walks - 10
+walk-length - 40
+max-memory-data-size - 1000000000
+
+*************************************************
+		LINE
+*************************************************
+Open command prompt
+cd D:\Masters\My_thesis\Code\Embedding_Methods\LINE-master\windows
+.\line -train D:/Masters/My_thesis/Code/edgelist_encoded_D1.edgelist -output D:/Masters/My_thesis/Code/Embedding_Results/LINE_16_D1.emd -size 16 
+
+for Line, have to save the edgelist in below format:
+
+Node1 Node2 Weight
+1	2	1
+3	4	1
+.....
+
+*************************************************
+		GAE
+https://github.com/tkipf/gae
+*************************************************
+
+conda activate py2.7
+cd D:\Masters\My_thesis\Code\Embedding_Methods\gae-master
+python setup.py install
+cd gae
+Changed input_data.py according to our input
+
+python train.py --model gcn_ae --features 0
+python train.py --model gcn_vae --features 0
+
