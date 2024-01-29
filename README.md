@@ -39,7 +39,7 @@ This module consists of 2 steps:
 1) python 3.5.5
 2) networkx 2.0
 3) tensorflow 1.7.0
-4) numpy 1.14.2
+4) numpy==1.16.3
 
 **Dataset Used**
 
